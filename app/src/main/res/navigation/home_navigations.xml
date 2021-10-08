@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_navigations"
+    app:startDestination="@id/home_yol_Harakat">
+
+    <fragment
+        android:id="@+id/home_yol_Harakat"
+        android:name="com.example.yolqoidalariapp.Home_yol_Harakat"
+        android:label="fragment_home_yol__harakat"
+        tools:layout="@layout/fragment_home_yol__harakat" >
+        <action
+            android:id="@+id/action_home_yol_Harakat_to_belgilar_show"
+            app:destination="@id/belgilar_show" />
+    </fragment>
+    <fragment
+        android:id="@+id/belgilar_show"
+        android:name="com.example.yolqoidalariapp.Belgilar_show"
+        android:label="fragment_belgilar_show"
+        tools:layout="@layout/fragment_belgilar_show" >
+        <action
+            android:id="@+id/action_belgilar_show_to_belgilar_add"
+            app:destination="@id/belgilar_add" />
+        <action
+            android:id="@+id/action_belgilar_show_to_belgilar_about"
+            app:destination="@id/belgilar_about" />
+    </fragment>
+    <fragment
+        android:id="@+id/belgilar_add"
+        android:name="com.example.yolqoidalariapp.Belgilar_add"
+        android:label="fragment_belgilar_add"
+        tools:layout="@layout/fragment_belgilar_add" />
+    <fragment
+        android:id="@+id/belgilar_about"
+        android:name="com.example.yolqoidalariapp.Belgilar_about"
+        android:label="fragment_belgilar_about"
+        tools:layout="@layout/fragment_belgilar_about" />
+</navigation>
