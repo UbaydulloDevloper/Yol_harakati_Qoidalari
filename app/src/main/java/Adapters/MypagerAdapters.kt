@@ -1,6 +1,7 @@
 package Adapters
 
 import Models.WayClass
+<<<<<<< HEAD
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -60,4 +61,36 @@ class MypagerAdapters(var context: Context, private val arraylist: ArrayList<Way
     }
 
     override fun getItemCount(): Int = arraylist.size
+=======
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.viewpager.widget.PagerAdapter
+import com.example.yolqoidalariapp.R
+import kotlinx.android.synthetic.main.item_recycle.view.*
+
+class MypagerAdapters(val arraylist: ArrayList<WayClass>) : PagerAdapter() {
+    override fun getCount(): Int = arraylist.size
+
+    override fun isViewFromObject(view: View, `object`: Any): Boolean {
+        return view == `object`
+    }
+
+    override fun instantiateItem(container: ViewGroup, position: Int): Any {
+
+        val viewList =
+            LayoutInflater.from(container.context).inflate(R.layout.item_recycle, container, false)
+        viewList.recycle_view.adapter = MyAdapter(viewList.context, arraylist)
+
+        container.addView(viewList, 0)
+        list.shuffle()
+
+        return viewList
+    }
+
+    override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
+        val view = `object` as View
+        container.removeView(view)
+    }
+>>>>>>> f45ac4a (Initial commit)
 }

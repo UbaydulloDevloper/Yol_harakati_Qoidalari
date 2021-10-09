@@ -9,12 +9,15 @@
         <entry key="..\:/proektlarim/YolQoidalariApp/app/src/main/res/drawable/ic_button_1.xml" value="0.26615384615384613" />
         <entry key="..\:/proektlarim/YolQoidalariApp/app/src/main/res/drawable/ic_heart_1.xml" value="0.26256410256410256" />
         <entry key="..\:/proektlarim/YolQoidalariApp/app/src/main/res/drawable/ic_heart__1__1.xml" value="0.26256410256410256" />
+<<<<<<< HEAD
         <entry key="..\:/proektlarim/YolQoidalariApp/app/src/main/res/drawable/ic_home.xml" value="0.26615384615384613" />
         <entry key="..\:/proektlarim/YolQoidalariApp/app/src/main/res/drawable/ic_info_1.xml" value="0.26615384615384613" />
         <entry key="..\:/proektlarim/YolQoidalariApp/app/src/main/res/drawable/ic_pencil_1.xml" value="0.26615384615384613" />
         <entry key="..\:/proektlarim/YolQoidalariApp/app/src/main/res/drawable/ic_plus.xml" value="0.26615384615384613" />
         <entry key="..\:/proektlarim/YolQoidalariApp/app/src/main/res/drawable/ic_rectangle_7.xml" value="0.26615384615384613" />
         <entry key="..\:/proektlarim/YolQoidalariApp/app/src/main/res/drawable/item_rec_row.xml" value="0.26256410256410256" />
+=======
+>>>>>>> f45ac4a (Initial commit)
         <entry key="..\:/proektlarim/YolQoidalariApp/app/src/main/res/drawable/item_tab_row.xml" value="0.26256410256410256" />
         <entry key="..\:/proektlarim/YolQoidalariApp/app/src/main/res/drawable/like.xml" value="0.26256410256410256" />
         <entry key="..\:/proektlarim/YolQoidalariApp/app/src/main/res/layout/activity_main.xml" value="0.1644021739130435" />
@@ -25,11 +28,17 @@
         <entry key="..\:/proektlarim/YolQoidalariApp/app/src/main/res/layout/fragment_belgilar_addd.xml" value="0.21965579710144928" />
         <entry key="..\:/proektlarim/YolQoidalariApp/app/src/main/res/layout/fragment_belgilar_show.xml" value="0.136" />
         <entry key="..\:/proektlarim/YolQoidalariApp/app/src/main/res/layout/fragment_home_yol__harakat.xml" value="0.1644021739130435" />
+<<<<<<< HEAD
         <entry key="..\:/proektlarim/YolQoidalariApp/app/src/main/res/layout/fragment_like.xml" value="0.20969202898550723" />
         <entry key="..\:/proektlarim/YolQoidalariApp/app/src/main/res/layout/item_recycle.xml" value="0.22192028985507245" />
         <entry key="..\:/proektlarim/YolQoidalariApp/app/src/main/res/layout/item_recycle_view.xml" value="0.41029900332225916" />
         <entry key="..\:/proektlarim/YolQoidalariApp/app/src/main/res/layout/recycle_item.xml" value="0.152" />
         <entry key="..\:/proektlarim/YolQoidalariApp/app/src/main/res/layout/tab_view_item.xml" value="0.4306049822064057" />
+=======
+        <entry key="..\:/proektlarim/YolQoidalariApp/app/src/main/res/layout/item_recycle.xml" value="0.22192028985507245" />
+        <entry key="..\:/proektlarim/YolQoidalariApp/app/src/main/res/layout/item_recycle_view.xml" value="0.41029900332225916" />
+        <entry key="..\:/proektlarim/YolQoidalariApp/app/src/main/res/layout/recycle_item.xml" value="0.22192028985507245" />
+>>>>>>> f45ac4a (Initial commit)
       </map>
     </option>
   </component>

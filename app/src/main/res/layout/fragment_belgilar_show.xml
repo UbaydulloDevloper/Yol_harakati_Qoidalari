@@ -91,13 +91,18 @@
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:background="#005CA1"
-        app:layout_constraintBottom_toTopOf="@id/recycle_view"
+        app:layout_constraintBottom_toTopOf="@id/view_pager"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title_background" />
 
+<<<<<<< HEAD
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/recycle_view"
+=======
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+>>>>>>> f45ac4a (Initial commit)
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -105,6 +110,21 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tab_layout" />
+<<<<<<< HEAD
+=======
+
+    <TextView
+        android:id="@+id/about_programmer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/bottom_background"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_background" />
+>>>>>>> f45ac4a (Initial commit)
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
