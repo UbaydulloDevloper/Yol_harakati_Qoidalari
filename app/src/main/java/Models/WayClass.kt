@@ -1,12 +1,14 @@
 package Models
 
-class WayClass {
+import java.io.Serializable
+
+
+class WayClass : Serializable {
     var id: Int? = null
     var imageName: String? = null
     var imagePath: String? = null
     var imageAbout: String? = null
-    var image: ByteArray? = null
-    var imageTur: String? = null
+    var imageTur: Int? = null
     var imageLike: Int? = null
 
 
@@ -14,13 +16,13 @@ class WayClass {
         imageName: String?,
         imagePath: String?,
         imageAbout: String?,
-        image: ByteArray?,
-        imageTur: String?
+
+        imageTur: Int?
     ) {
         this.imageName = imageName
         this.imagePath = imagePath
         this.imageAbout = imageAbout
-        this.image = image
+
         this.imageTur = imageTur
     }
 
@@ -35,14 +37,14 @@ class WayClass {
         imageName: String?,
         imagePath: String?,
         imageAbout: String?,
-        image: ByteArray?,
-        imageTur: String?,
+
+        imageTur: Int?,
         imageLike: Int?
     ) {
         this.imageName = imageName
         this.imagePath = imagePath
         this.imageAbout = imageAbout
-        this.image = image
+
         this.imageTur = imageTur
         this.imageLike = imageLike
     }
@@ -53,15 +55,15 @@ class WayClass {
         imageName: String?,
         imagePath: String?,
         imageAbout: String?,
-        image: ByteArray?,
-        imageTur: String?,
+
+        imageTur: Int?,
         imageLike: Int?
     ) {
         this.id = id
         this.imageName = imageName
         this.imagePath = imagePath
         this.imageAbout = imageAbout
-        this.image = image
+
         this.imageTur = imageTur
         this.imageLike = imageLike
     }

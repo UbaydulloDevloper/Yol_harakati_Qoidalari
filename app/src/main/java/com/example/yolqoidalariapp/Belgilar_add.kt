@@ -1,59 +1,93 @@
 package com.example.yolqoidalariapp
 
+import DB.DBHelper
+import Models.WayClass
+import android.annotation.SuppressLint
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.example.yolqoidalariapp.databinding.FragmentBelgilarAddBinding
+import java.io.File
+import java.io.FileInputStream
+import java.io.FileOutputStream
+import java.text.SimpleDateFormat
+import java.util.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [Belgilar_add.newInstance] factory method to
- * create an instance of this fragment.
- */
 class Belgilar_add : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    lateinit var binding: FragmentBelgilarAddBinding
+    lateinit var dbHelper: DBHelper
+    var absolutePath: String? = ""
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_belgilar_add, container, false)
+    ): View {
+        val items = arrayOf("Ogohlantiruvchi", "Imtiyozli", "Ta'qiqlovchi", "Buyuruvchi")
+        binding = FragmentBelgilarAddBinding.inflate(layoutInflater)
+        dbHelper = DBHelper(container!!.context)
+        binding.image.setOnClickListener {
+            startActivityForResult(
+                Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+                    addCategory(Intent.CATEGORY_OPENABLE)
+                    type = "image/*"
+                },
+                1
+            )
+        }
+
+        binding.spinner.adapter =
+            ArrayAdapter(container.context, android.R.layout.simple_spinner_dropdown_item, items)
+        binding.saveBtn.setOnClickListener {
+
+            val name = binding.txtName.text.toString()
+            val about = binding.txtAbout.text.toString()
+            val spiner = binding.spinner.selectedItemPosition
+
+            if (name != "" && about != "" && absolutePath != "") {
+                dbHelper.addImage(WayClass(name, absolutePath, about, spiner))
+                Toast.makeText(container.context, "Save information's", Toast.LENGTH_SHORT).show()
+                binding.txtName.text = null
+                binding.txtAbout.text = null
+                binding.image.setImageResource(R.drawable.defalte_image)
+                findNavController().navigate(R.id.belgilar_show)
+            } else {
+                Toast.makeText(container.context, "Data is not enough", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        binding.backBtn.setOnClickListener {
+            childFragmentManager.popBackStack()
+        }
+
+
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Belgilar_add.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Belgilar_add().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    @SuppressLint("SimpleDateFormat")
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
+            val uri = data?.data ?: return
+            binding.image.setImageURI(uri)
+            val format = SimpleDateFormat("yyyyMMdd_hhmmss").format(Date())
+            val inputStream = activity?.contentResolver?.openInputStream(uri)
+            val file = File(activity?.filesDir, "${format}_image.jpg")
+            val fileOutputStream = FileOutputStream(file)
+            inputStream?.copyTo(fileOutputStream)
+            inputStream?.close()
+            fileOutputStream.close()
+            absolutePath = file.absolutePath
+
+        }
+
     }
 }

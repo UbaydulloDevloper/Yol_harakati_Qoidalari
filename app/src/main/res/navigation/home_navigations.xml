@@ -25,15 +25,43 @@
         <action
             android:id="@+id/action_belgilar_show_to_belgilar_about"
             app:destination="@id/belgilar_about" />
+        <action
+            android:id="@+id/action_belgilar_show_to_likeFragment"
+            app:destination="@id/likeFragment" />
+        <action
+            android:id="@+id/action_belgilar_show_to_aboutMe"
+            app:destination="@id/aboutMe" />
     </fragment>
     <fragment
         android:id="@+id/belgilar_add"
-        android:name="com.example.yolqoidalariapp.Belgilar_add"
+        android:name="com.example.yolqoidalariapp.Belgilar_about"
         android:label="fragment_belgilar_add"
-        tools:layout="@layout/fragment_belgilar_add" />
+        tools:layout="@layout/fragment_belgilar_aboute" />
     <fragment
         android:id="@+id/belgilar_about"
-        android:name="com.example.yolqoidalariapp.Belgilar_about"
+        android:name="com.example.yolqoidalariapp.Belgilar_add"
         android:label="fragment_belgilar_about"
-        tools:layout="@layout/fragment_belgilar_about" />
+        tools:layout="@layout/fragment_belgilar_add" >
+        <action
+            android:id="@+id/action_belgilar_about_to_belgilar_show"
+            app:destination="@id/belgilar_show" />
+    </fragment>
+    <fragment
+        android:id="@+id/likeFragment"
+        android:name="com.example.yolqoidalariapp.LikeFragment"
+        android:label="fragment_like"
+        tools:layout="@layout/fragment_like" >
+        <action
+            android:id="@+id/action_likeFragment_to_belgilar_show"
+            app:destination="@id/belgilar_show" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutMe"
+        android:name="com.example.yolqoidalariapp.AboutMe"
+        android:label="fragment_about_me"
+        tools:layout="@layout/fragment_about_me" >
+        <action
+            android:id="@+id/action_aboutMe_to_belgilar_show"
+            app:destination="@id/belgilar_show" />
+    </fragment>
 </navigation>
